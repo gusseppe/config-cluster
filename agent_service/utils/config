@@ -1,5 +1,5 @@
 # Registry where the source image is located
-SOURCE_REGISTRY=localhost:5000
+SOURCE_REGISTRY=docker.io/gusseppe
 
 # Registry where the image will be pushed
 TARGET_REGISTRY=vcf-np-w2-harbor-az1.sunat.peru/agentes

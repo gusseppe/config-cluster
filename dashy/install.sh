@@ -6,7 +6,7 @@ helm upgrade --install dashy ./dashy-1.0.0.tgz \
   --set image.tag=release-3.1.1 \
   --set service.type=LoadBalancer\
   -f dashy-values.yaml \
-  -f local-dashy-override.yaml \
+  -f dashy-override.yaml \
   --recreate-pods \
   --wait
 echo "✨ Dashy deployment complete!"
