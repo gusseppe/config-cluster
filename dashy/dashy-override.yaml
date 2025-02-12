@@ -19,6 +19,9 @@ static:
       sections:
         - name: Apps
           items:
-            - title: OpenWebUI
-              description: UI para las LLMs
-              url: "http://localhost:81"
+            - title: mlflow-agentes
+              description: mlflow-agentes
+              url: "http://172.26.58.127:5001"
+            - title: openwebui
+              description: openwebui
+              url: "http://172.26.58.129:30080"

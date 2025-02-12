@@ -37,4 +37,4 @@ while read -r name external_ip port; do
 EOF
 done < loadbalancer-services.txt
 
-echo "sunat-dashy-override.yaml generated successfully!"
+echo "dashy-override.yaml generated successfully!"
