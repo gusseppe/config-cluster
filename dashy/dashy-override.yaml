@@ -1,0 +1,24 @@
+static:
+  configMapContent:
+    conf: |-
+      # Page meta info, like heading, footer text and nav links
+      pageInfo:
+        title: Dashboard
+        description: Apps para los agentes
+        navLinks:
+          - title: GitHub
+            path: https://github.com/Lissy93/dashy
+          - title: Documentation
+            path: https://dashy.to/docs
+
+      # Optional app settings and configuration
+      appConfig:
+        theme: material
+
+      # Main content - An array of sections, each containing an array of items
+      sections:
+        - name: Apps
+          items:
+            - title: OpenWebUI
+              description: UI para las LLMs
+              url: "http://localhost:81"

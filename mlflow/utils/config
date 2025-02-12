@@ -1,0 +1,10 @@
+# Registry where the source image is located (e.g., Docker Hub)
+SOURCE_REGISTRY=docker.io/burakince
+# Registry where the image will be pushed (e.g., local/private registry)
+TARGET_REGISTRY=vcf-np-w2-harbor-az1.sunat.peru/agentes
+
+# Image name and tag for the source (from SOURCE_REGISTRY)
+SOURCE_IMAGE=mlflow:2.20.1
+
+# Image name and tag for the target (to TARGET_REGISTRY)
+TARGET_IMAGE=mlflow:2.20.1

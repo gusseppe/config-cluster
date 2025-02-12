@@ -1,0 +1,11 @@
+# Registry where the source image is located
+SOURCE_REGISTRY=localhost:5000
+
+# Registry where the image will be pushed
+TARGET_REGISTRY=vcf-np-w2-harbor-az1.sunat.peru/agentes
+
+# Image name and tag for the source
+SOURCE_IMAGE=agent-service:latest
+
+# Image name and tag for the target
+TARGET_IMAGE=agent-service:latest
