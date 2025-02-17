@@ -23,7 +23,7 @@ spec:
         # - name: AGENT_URL
         #   value: "http://fastapi-service.default.svc.cluster.local"
         - name: MLFLOW_TRACKING_URI
-          value: "http://mlflow.default.svc.cluster.local:5001"
+          value: "http://mlflow-agentes.default.svc.cluster.local:5001"
         - name: MLFLOW_S3_ENDPOINT_URL
           value: "http://minio.default.svc.cluster.local:9000"
         - name: AWS_ACCESS_KEY_ID
