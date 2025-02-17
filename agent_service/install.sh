@@ -3,6 +3,6 @@ set -e
 
 echo "🚀 Deploying Agent service..."
 
-kubectl apply -f agent-service.yaml
+kubectl apply -f checker-agent.yaml
 
 echo "✅ Agent service deployed successfully!"

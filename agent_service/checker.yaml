@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: checker-agent
+  labels:
+    app: checker-agent
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: checker-agent
+  template:
+    metadata:
+      labels:
+        app: checker-agent
+    spec:
+      containers:
+      - name: checker-container
+        image: vcf-np-w2-harbor-az1.sunat.peru/agentes/checker-agent:latest
+        ports:
+        - containerPort: 8501
+        env:
+        # - name: AGENT_URL
+        #   value: "http://fastapi-service.default.svc.cluster.local"
+        - name: MLFLOW_TRACKING_URI
+          value: "http://mlflow.default.svc.cluster.local:5001"
+        - name: MLFLOW_S3_ENDPOINT_URL
+          value: "http://minio.default.svc.cluster.local:9000"
+        - name: AWS_ACCESS_KEY_ID
+          value: "minio"
+        - name: AWS_SECRET_ACCESS_KEY
+          value: "minio123"
+        - name: OPENAI_API_KEY
+          value: "Ignored"
+        - name: OPENAI_API_BASE_URLS
+          value: "http://ollama-service:11434/v1"
+        - name: MODEL_NAME
+          value: "llama3.2:1b"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: checker-agent
+spec:
+  selector:
+    app: checker-agent
+  ports:
+    - protocol: TCP
+      port: 8501
+      targetPort: 8501
+  type: LoadBalancer

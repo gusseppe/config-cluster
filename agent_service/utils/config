@@ -5,7 +5,7 @@ SOURCE_REGISTRY=docker.io/gusseppe
 TARGET_REGISTRY=vcf-np-w2-harbor-az1.sunat.peru/agentes
 
 # Image name and tag for the source
-SOURCE_IMAGE=agent-service:latest
+SOURCE_IMAGE=checker-agent:latest
 
 # Image name and tag for the target
-TARGET_IMAGE=agent-service:latest
+TARGET_IMAGE=checker-agent:latest
