@@ -21,9 +21,9 @@ chmod +x install.sh
 
 This will install the components in the following order:
 1. MLflow (Model tracking and registry)
-2. Ollama (AI model serving)
+2. Ollama (Pool of LLM)
 3. Dashy (Dashboard interface)
-4. KubeAI (Kubernetes AI tools)
+4. KubeAI (LLM inference)
 5. Checker (Model validation service)
 
 ## Quick Uninstallation
@@ -115,40 +115,6 @@ After installation, services can be accessed at:
 - Dashy: http://<load-balancer-ip>:80
 - Ollama: http://<load-balancer-ip>:11434
 
-## Troubleshooting
-
-If you encounter issues during installation:
-
-1. Check the logs of the failed component:
-   ```bash
-   kubectl logs -l app=<component-name>
-   ```
-
-2. Verify pod status:
-   ```bash
-   kubectl get pods
-   ```
-
-3. Check service exposure:
-   ```bash
-   kubectl get svc
-   ```
-
-4. Verify component dependencies:
-   ```bash
-   # Check MLflow
-   kubectl get svc mlflow
-   
-   # Check Ollama
-   kubectl get svc ollama-service
-   
-   # Check Minio
-   kubectl get svc minio
-   ```
-
-5. Check individual component README files for specific troubleshooting steps
-
-6. Try uninstalling and reinstalling the failed component
 
 ## Additional Notes
 
@@ -159,4 +125,3 @@ If you encounter issues during installation:
 - Each service is exposed via LoadBalancer by default
 - Environment variables and configurations can be modified in each component's YAML files
 
-This guide provides both quick installation methods and detailed individual component setup instructions. For in-depth details, always check the specific component documentation inside each folder.

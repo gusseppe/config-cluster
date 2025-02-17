@@ -22,7 +22,8 @@ handle_error() {
 }
 
 # Array of components in installation order
-COMPONENTS=("mlflow" "ollama" "dashy" "kubeai" "checker")
+COMPONENTS=("mlflow" "ollama" "kubeai" "checker" "dashy")
+# COMPONENTS=("mlflow" "ollama" "dashy" "checker")
 
 # Print installation start
 print_message "Starting installation of all components..."
@@ -55,14 +56,3 @@ for component in "${COMPONENTS[@]}"; do
 done
 
 print_success "All components installed successfully!"
-
-# Print final instructions
-print_message "You can verify the installations by checking each component's status:"
-echo "
-Check component status:
-kubectl get pods -n default -l app=mlflow
-kubectl get pods -n default -l app=ollama
-kubectl get pods -n default -l app=checker-agent
-kubectl get pods -n default -l app=dashy
-kubectl get pods -n default -l app=kubeai
-"

@@ -1,7 +1,16 @@
 #!/bin/bash
 
-# Get LoadBalancer services and extract NAME, EXTERNAL-IP, and PORT
-kubectl get svc -o json | jq -r '.items[] | select(.spec.type == "LoadBalancer") | "\(.metadata.name) \(.status.loadBalancer.ingress[0].ip) \(.spec.ports[0].port)"' > loadbalancer-services.txt
+# Get LoadBalancer services and extract NAME, EXTERNAL-IP, and PORT, excluding specific services
+kubectl get svc -o json | jq -r '
+  .items[] 
+  | select(.spec.type == "LoadBalancer") 
+  | select(.metadata.name != "minio" 
+    and .metadata.name != "mlflow" 
+    and .metadata.name != "dashy"
+    and .metadata.name != "proxy-public" 
+    and .metadata.name != "raycluster-kuberay-head-svc") 
+  | "\(.metadata.name) \(.status.loadBalancer.ingress[0].ip) \(.spec.ports[0].port)"
+' > loadbalancer-services.txt
 
 # Initialize the YAML file
 cat <<EOF > dashy-override.yaml
@@ -17,11 +26,9 @@ static:
             path: https://github.com/Lissy93/dashy
           - title: Documentation
             path: https://dashy.to/docs
-
       # Optional app settings and configuration
       appConfig:
         theme: material
-
       # Main content - An array of sections, each containing an array of items
       sections:
         - name: Apps
