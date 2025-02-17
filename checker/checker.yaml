@@ -34,8 +34,10 @@ spec:
           value: "Ignored"
         - name: OPENAI_API_BASE_URLS
           value: "http://ollama-service:11434/v1"
-        - name: MODEL_NAME
+        - name: AGENT_LLM_NAME
           value: "llama3.2:1b"
+        - name: RAG_LLM_NAME
+          value: "llama3.2:3b"
 ---
 apiVersion: v1
 kind: Service
