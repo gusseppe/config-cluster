@@ -10,6 +10,6 @@ helm upgrade --install mlflow-agentes ./mlflow-0.7.13.tgz \
   --wait
 
 echo "📊 Checking MLflow deployment status..."
-helm status mlflow
+helm status mlflow-agentes
 
 echo "✨ MLflow deployment complete!"
