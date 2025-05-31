@@ -8,7 +8,7 @@ Ensure you have the following installed on your system:
 - Kubernetes cluster
 - Helm
 - Docker
-- Local container registry (vcf-np-w2-harbor-az1.sunat.peru/agentes) with required images pushed
+- Local container registry (harbor) with required images pushed
 - Necessary permissions to deploy applications
 
 ## Quick Installation
