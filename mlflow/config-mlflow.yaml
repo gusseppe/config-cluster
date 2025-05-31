@@ -62,7 +62,7 @@ service:
   type: LoadBalancer
   #type: ClusterIP
   # -- Default Service port
-  port: 5001
+  port: 5002
   # port: 5000
   # -- Default Service name
   name: http
@@ -81,7 +81,7 @@ backendStore:
     # -- Specifies if you want to use postgres backend storage
     enabled: true
     # -- Postgres host address. e.g. your RDS or Azure Postgres Service endpoint
-    host: "postgresql.default.svc.cluster.local" # required
+    host: "postgresql.agents.svc.cluster.local" # required
     # -- Postgres service port
     port: 5432 # required
     # -- mlflow database name created before in the postgres instance
@@ -172,7 +172,7 @@ extraEnvVars:
   # MLFLOW_S3_IGNORE_TLS: true
   # MLFLOW_S3_UPLOAD_EXTRA_ARGS: '{"ServerSideEncryption": "aws:kms", "SSEKMSKeyId": "1234"}'
   # AWS_DEFAULT_REGION: my_region
-  MLFLOW_S3_ENDPOINT_URL: http://minio.default.svc.cluster.local:9000
+  MLFLOW_S3_ENDPOINT_URL: http://minio.agents.svc.cluster.local:9000
   # AWS_CA_BUNDLE: /some/ca/bundle.pem
   # MLFLOW_GCS_DEFAULT_TIMEOUT - Sets the standard timeout for transfer operations in seconds (Default: 60). Use -1 for indefinite timeout.
   # MLFLOW_GCS_UPLOAD_CHUNK_SIZE - Sets the standard upload chunk size for bigger files in bytes (Default: 104857600 ≙ 100MiB), must be multiple of 256 KB.

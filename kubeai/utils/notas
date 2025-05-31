@@ -1,3 +1,0 @@
-export https_proxy=http://192.168.64.133:3128
-unset http_proxy && unset https_proxy
-kubectl config use-context deploy-Mlops-desa01

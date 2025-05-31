@@ -4,24 +4,25 @@ static:
       # Page meta info, like heading, footer text and nav links
       pageInfo:
         title: Dashboard
-        description: Apps para los agentes
+        description: Links
         navLinks:
           - title: GitHub
             path: https://github.com/Lissy93/dashy
           - title: Documentation
             path: https://dashy.to/docs
-
       # Optional app settings and configuration
       appConfig:
         theme: material
-
       # Main content - An array of sections, each containing an array of items
       sections:
         - name: Apps
           items:
-            - title: mlflow-agentes
-              description: mlflow-agentes
-              url: "http://172.26.58.127:5001"
-            - title: openwebui
-              description: openwebui
-              url: "http://172.26.58.129:30080"
+            - title: minio
+              description: minio
+              url: "http://localhost:9000"
+            - title: mlflow
+              description: mlflow
+              url: "http://localhost:5002"
+            - title: open-webui
+              description: open-webui
+              url: "http://localhost:30080"

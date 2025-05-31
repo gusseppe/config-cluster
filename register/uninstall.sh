@@ -22,12 +22,12 @@ handle_error() {
 }
 
 # Main uninstallation
-print_message "Uninstalling Checker service..."
+print_message "Uninstalling Register service..."
 
 # Check if resources exist and delete them
-if kubectl get -f checker.yaml &>/dev/null; then
-    kubectl delete -f checker.yaml || handle_error "Failed to delete checker.yaml resources"
-    print_success "Checker service uninstalled successfully!"
+if kubectl get -f register.yaml &>/dev/null; then
+    kubectl delete -f register.yaml || handle_error "Failed to delete register.yaml resources"
+    print_success "Register service uninstalled successfully!"
 else
-    print_warning "Checker service resources not found. Skipping uninstallation."
+    print_warning "Register service resources not found. Skipping uninstallation."
 fi

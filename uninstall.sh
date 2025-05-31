@@ -21,8 +21,8 @@ handle_error() {
     exit 1
 }
 
-# Array of components in reverse order for safe uninstallation
-COMPONENTS=("checker" "kubeai" "dashy" "ollama" "mlflow")
+# Array of components in reverse order for safe uninstallation (no kubeai)
+COMPONENTS=("dashy" "register" "openwebui" "ollama" "mlflow")
 
 # Print uninstallation start
 print_message "Starting uninstallation of all components..."
@@ -55,14 +55,3 @@ for component in "${COMPONENTS[@]}"; do
 done
 
 print_success "All components uninstalled successfully!"
-
-# Print final verification instructions
-print_message "You can verify the uninstallation by checking remaining resources:"
-echo "
-Verify no resources remain:
-kubectl get pods -n default -l app=mlflow
-kubectl get pods -n default -l app=ollama
-kubectl get pods -n default -l app=checker-agent
-kubectl get pods -n default -l app=dashy
-kubectl get pods -n default -l app=kubeai
-"

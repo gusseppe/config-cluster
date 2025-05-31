@@ -1,6 +1,3 @@
-minio 172.26.58.128 9000
-mlflow 172.26.58.82 5000
-mlflow-agentes 172.26.58.127 5001
-openwebui 172.26.58.129 30080
-proxy-public 172.26.58.9 80
-raycluster-kuberay-head-svc 172.26.58.83 8080
+minio localhost 9000
+mlflow localhost 5002
+open-webui localhost 30080
